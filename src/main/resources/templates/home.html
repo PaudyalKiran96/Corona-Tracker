@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8"/>
+    <title>Spring Boot Thymeleaf Application - Bootstrap Table</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+<div class="container">
+<table align="center" class="table table-bordered">
+
+    <h1 align="center">Total Corona Virus Cases in World</h1>
+    <thead>
+    <tr>
+        <th> Country </th>
+        <th> State </th>
+        <th> Confirmed Cases </th>
+        <th> Deaths </th>
+    </tr>
+    </thead>
+    <tbody>
+
+    <tr th:each="case : ${data}">
+        <td><span th:text="${case.Country_Region}">  </span></td>
+        <td><span th:text="${case.Province_State}">  </span></td>
+        <td><span th:text="${case.Confirmed}">  </span></td>
+        <td><span th:text="${case.Deaths}">  </span></td>
+
+    </tr>
+    </tbody>
+</table>
+</div>
+</body>
+</html>
